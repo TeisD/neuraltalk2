@@ -182,7 +182,7 @@ def main(params):
   dset = f.create_dataset("images", (N,3,256,256), dtype='uint8') # space for resized images
   for i,img in enumerate(imgs):
     # load the image
-    I = imread(os.path.join(params['images_root'], img['file_path']))
+    I = imread(os.path.join(params['images_root'], img['file_path']), mode='RGB')
     try:
         Ir = imresize(I, (256,256))
     except:
