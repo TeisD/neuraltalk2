@@ -41,7 +41,7 @@ def prepro_captions(imgs):
     img['processed_tokens'] = []
     for j,s in enumerate(img['captions']):
       # txt = str(s).lower().translate(None, string.punctuation).strip().split()
-      txt = str(s).lower().strip().split()
+      txt = s.encode('utf-8').lower().strip().split()
       img['processed_tokens'].append(txt)
       if i < 10 and j == 0: print txt
 
